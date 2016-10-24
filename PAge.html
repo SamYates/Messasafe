@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mesasafe Log In</title>
+  <style>
+  body {
+    margin: 0px;
+    background-color: #94120c;
+  }
+  .pad {
+    padding: 25px;
+  }
+  .header {
+    background-color: #94120c;
+    color: #FFFFFF;
+    height: 20%;
+    font-size: 22pt;
+    text-align: center;
+  }
+  .center {
+    text-align: center;
+    color: white;
+    font-family:"Eras ITC", sans-serif ;
+  }
+  .centerTitle {
+    font-size: 75px;
+  }
+  .centerDetails{
+    font-size: 30px;
+  }
+  .centerLogIn{
+    font-size: 40px;
+  }
+  input{
+    border-radius: 10px;
+    outline:none;
+    padding: 7px;
+    background-color: #cf1212;
+    border: 3px solid #94120c;
+  }
+  input:focus {
+    border: 3px solid #660c08;
+  }
+  </style>
+  <script>
+    function checkPassword() {
+      var password = document.getElementById("passwordBox");
+      var passwordText = password.value;
+      if(passwordText == "SAMISCOOL") {
+        return true;
+      }
+      alert("Access denied! Incorrect Username or Password!");
+      return false;
+    }
+    function checkUsername() {
+      var username = document.getElementById("usernameBox");
+      var usernameText = username.value;
+      if(usernameText == "JimJamParent" || "Sam Yates") {
+        return true;
+      }
+      alert("Access denied! Incorrect Username or Password!");
+      return false;
+    }
+
+    function checkLogin() {
+       if (checkUsername() && checkPassword()) {
+             window.location = "Actual page.html";
+       }
+   }
+  </script>
+</head>
+<body>
+  <div class="header pad">
+    <img src="Messasafe.png" alt="MessasafeLogo" style="height: 250px; width=300px;"/>
+  </div>
+  <div class="center">
+    <div class="centerTitle">
+      <p><b>Log in to Messasafe</p>
+    </div>
+    <div class="centerDetails">
+      <p>Please enter your Username and Password</p>
+      <p>Username : <input id="usernameBox" type="username"/></p>
+      <p>Password : <input id="passwordBox" type="password"></p>
+    </div>
+    <div class="centerLogIn">
+      <p onclick="checkLogin();" >Log In</b></p>
+    </div>
+  </div>
+</body>
+</html>
